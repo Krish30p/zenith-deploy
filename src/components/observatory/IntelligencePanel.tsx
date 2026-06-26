@@ -655,7 +655,7 @@ export default function IntelligencePanel({
       {/* About / Dossier Flashcard */}
       <motion.div
         layout
-        onClick={() => setActiveLensCard(activeLensCard === 4 ? null : 4)}
+        onClick={() => setActiveLensCard(prev => (prev === 4 ? null : 4))}
         className="bg-white/60 backdrop-blur-md border border-black/5 rounded-2xl p-6 hover:border-[#0d9488]/40 hover:bg-[#0d9488]/5 transition-all shadow-lg cursor-pointer group shrink-0"
       >
         <div className="flex items-center justify-between">
