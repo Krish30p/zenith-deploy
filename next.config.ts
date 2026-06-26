@@ -7,8 +7,9 @@ const nextConfig: NextConfig = {
     // Suppress the "cannot use import statement" error from satellite.js wasm workers
   },
   // Silence Turbopack error (we use a custom webpack config)
-  turbopack: {},
-  eslint: { ignoreDuringBuilds: true },
+  turbopack: {
+    root: path.resolve(__dirname),
+  },
   typescript: { ignoreBuildErrors: true },
   webpack: (config, { isServer, webpack }) => {
     // Copying Cesium assets is now handled by the pre-build script (copy-cesium.js)
